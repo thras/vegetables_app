@@ -1,9 +1,21 @@
 {% extends "_base.html" %}
-
+{% load static %}
 {% block title %}Home{% endblock title %}
 
 {% block content %}
     <h1>This is our home page.</h1>
+    <div class="card" style="width: 20rem; align-items: center;" >
+        <img class="rounded-circle shadow" alt="Cinque Terre" width="250" height="250" src="{% static 'images/dfp.jpg' %}">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+
+
+
     {% if user.is_authenticated %}
         <p>Hi {{ user.email }}!</p>
         <!-- Django 5 need post method to logout -->
