@@ -6,3 +6,6 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/MyWorks
+    environment:
+      - "DJANGO_SECRET_KEY=django-insecure-23wm8%o4pia6vn2fau4q@ty4!&ir(papz0u3u5(#_5mzx7x49x"
+      - "DJANGO_DEBUG=True"
