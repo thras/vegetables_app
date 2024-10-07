@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     #My apps:
     'accounts',
     'pages',
+    'vegetables',
 
     # Third apps
     'crispy_forms',
