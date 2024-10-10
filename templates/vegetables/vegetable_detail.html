@@ -1,0 +1,13 @@
+{% extends "_base.html" %}
+
+{% block title %}{{ vegetable.title }}{% endblock title %}
+
+{% block content %}
+    <div class="vegetable-detail">
+        <h2><a href="">{{ vegetable.name }}</a></h2>
+        <p>Cals/100grams: {{ vegetable.calorie }}</p>
+        <p>KJ/100grams: {{ vegetable.kilojoule }}</p>
+        <p>Category: {{ vegetable.category }}</p>
+        <a href= {{ vegetable.wiki }} class="btn btn-primary">Wikipedia</a>
+    </div>
+{% endblock content %}

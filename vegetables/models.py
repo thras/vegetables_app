@@ -1,4 +1,6 @@
 from django.db import models
+import uuid
+
 
 # Create your models here.
 class Vegetable(models.Model):
@@ -14,6 +16,7 @@ class Vegetable(models.Model):
         'TUBER': "Tuber",
     }
 
+    id= models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=25, unique=True)
     calorie = models.PositiveSmallIntegerField(blank=False)
     kilojoule = models.PositiveSmallIntegerField(blank=False)

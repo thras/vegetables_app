@@ -1,0 +1,21 @@
+{% extends "_base.html" %}
+{% load static %}
+{% block title %}Vegetables{% endblock title %}
+
+{% block content %}
+<div class="row">
+    {% for vegetable in vegetable_list %}
+        <div class="card p-2 m-2 g-col-6" style="width: 20rem; align-items: center;" >
+            <img class="rounded-circle shadow" alt="Cinque Terre" width="250" height="250" src="{% static 'images/Cauliflower.jpg' %}">
+            <div class="card-body">
+              <h5 class="card-title">{{ vegetable.name }}</h5>
+              <a href="{% url 'vegetable_detail' vegetable.pk %}" class="btn btn-primary">More...</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock content %}
