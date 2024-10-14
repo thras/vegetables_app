@@ -3,11 +3,16 @@
 {% block title %}{{ vegetable.title }}{% endblock title %}
 
 {% block content %}
-    <div class="vegetable-detail">
+    <div class="vegetable-detail" style="text-align: center;" >
         <h2><a href="">{{ vegetable.name }}</a></h2>
         <p>Cals/100grams: {{ vegetable.calorie }}</p>
         <p>KJ/100grams: {{ vegetable.kilojoule }}</p>
         <p>Category: {{ vegetable.category }}</p>
-        <a href= {{ vegetable.wiki }} class="btn btn-primary">Wikipedia</a>
+        <a href= {{ vegetable.wiki }} class="btn btn-primary" target="_blank">Wikipedia</a>
+    </div>
+    <div class="row">
+        <div class="row" style="text-align: center;">
+            <a href="{{request.META.HTTP_REFERER}}">Go Back.</a>
+        </div>
     </div>
 {% endblock content %}
