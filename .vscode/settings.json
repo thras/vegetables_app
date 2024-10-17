@@ -1,0 +1,7 @@
+{
+  "editor.defaultFormatter": null,
+  "notebook.defaultFormatter": null,
+  "notebook.formatOnSave.enabled": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true
+}

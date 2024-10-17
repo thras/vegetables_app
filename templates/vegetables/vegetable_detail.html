@@ -1,18 +1,36 @@
-{% extends "_base.html" %}
+{% extends "_base.html" %} 
+{% load static %}
 
-{% block title %}{{ vegetable.title }}{% endblock title %}
+{% block title %}{{ vegetable.title }}{% endblock title %} 
 
 {% block content %}
-    <div class="vegetable-detail" style="text-align: center;" >
-        <h2><a href="">{{ vegetable.name }}</a></h2>
-        <p>Cals/100grams: {{ vegetable.calorie }}</p>
-        <p>KJ/100grams: {{ vegetable.kilojoule }}</p>
-        <p>Category: {{ vegetable.category }}</p>
-        <a href= {{ vegetable.wiki }} class="btn btn-primary" target="_blank">Wikipedia</a>
-    </div>
-    <div class="row">
-        <div class="row" style="text-align: center;">
-            <a href="{{request.META.HTTP_REFERER}}">Go Back.</a>
-        </div>
-    </div>
+<div class="vegetable-detail" style="display: flex; align-items: center; justify-content: center">
+  <!-- <h2>{{ vegetable.name }}</h2>
+  <p>Cals/100grams: {{ vegetable.calorie }}</p>
+  <p>KJ/100grams: {{ vegetable.kilojoule }}</p>
+  <p>Category: {{ vegetable.category }}</p>
+  <a href={{ vegetable.wiki }} class="btn btn-primary" target="_blank">Wikipedia</a> -->
+
+<div class="card m-2 p-2 mt-3" style="width: 18rem; align-items: center; min-width: 260px">
+  <img class="rounded-circle shadow" alt="Cinque Terre" width="250" height="250"
+    src="{% static 'images/Cauliflower.jpg' %}" />
+  <div class="card-body">
+    <h5 class="card-title">{{ vegetable.name }}</h5>
+    <p class="card-text">Cals/100grams: {{ vegetable.calorie }}</p>
+    <p class="card-text">KJ/100grams: {{ vegetable.kilojoule }}</p>
+    <p class="card-text">Category: {{ vegetable.category }}</p>
+    <a href={{ vegetable.wiki }} class="card-link" target="_blank">Wikipedia</a>
+  </div>
+</div>
+
+
+
+
+
+</div>
+<div class="row">
+  <div class="row" style="text-align: center">
+    <a href="{{request.META.HTTP_REFERER}}">Go Back.</a>
+  </div>
+</div>
 {% endblock content %}

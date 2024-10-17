@@ -6,14 +6,14 @@ import uuid
 class Vegetable(models.Model):
     CATEGORIES = {
         'NONE': "-",
-        'ROOT': "Root",
-        'STEM': "Stem",
-        'BULB': "Bulb",
-        'LEAF': "Leaf",
-        'FRUIT': "Fruit",
-        'FLOWER': "Flower",
-        'SEED': "Seed",
-        'TUBER': "Tuber",
+        'Root': "Root",
+        'Stem': "Stem",
+        'Bulb': "Bulb",
+        'Leaf': "Leaf",
+        'Fruit': "Fruit",
+        'Flower': "Flower",
+        'Seed': "Seed",
+        'Tuber': "Tuber",
     }
 
     id= models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
