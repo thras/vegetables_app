@@ -27,7 +27,7 @@ class HomePageTests(SimpleTestCase):
         view = resolve("/")
         self.assertEqual(view.func.__name__, HomePageView.as_view().__name__)
 
-class AboutPageTests(SimpleTestCase): # new
+class AboutPageTests(SimpleTestCase):
     def setUp(self):
         url = reverse("about")
         self.response = self.client.get(url)

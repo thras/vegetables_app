@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView
 
 class VegetableListView(ListView):
     model = Vegetable
-    paginate_by = 4
+    paginate_by = 8
     context_object_name = 'vegetable_list'
     template_name = 'vegetables/vegetable_list.html'
 

@@ -1,11 +1,11 @@
 from django.db import models
 import uuid
-
+from django.urls import reverse
 
 # Create your models here.
 class Vegetable(models.Model):
     CATEGORIES = {
-        'NONE': "-",
+        'None': "-",
         'Root': "Root",
         'Stem': "Stem",
         'Bulb': "Bulb",
@@ -25,3 +25,6 @@ class Vegetable(models.Model):
 
     def __str__(self):
         return self.name
+    
+    def get_absolute_url(self):
+        return reverse("vegetable_detail", args=[str(self.id)])
