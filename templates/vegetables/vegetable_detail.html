@@ -13,7 +13,11 @@
 
 <div class="card m-2 p-2 mt-3" style="width: 18rem; align-items: center; min-width: 260px">
   <img class="rounded-circle shadow" alt="Cinque Terre" width="250" height="250"
-    src="{% static 'images/Cauliflower.jpg' %}" />
+      {% if vegetable.photo %}
+        src="{{ vegetable.photo.url }}"
+      {% else %}
+        src="{% static 'images/Cauliflower.jpg' %}"
+      {% endif %}
   <div class="card-body">
     <h5 class="card-title">{{ vegetable.name }}</h5>
     <p class="card-text">Cals/100grams: {{ vegetable.calorie }}</p>

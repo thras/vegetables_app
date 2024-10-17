@@ -3,6 +3,6 @@ from .models import Vegetable
 
 # Register your models here.
 class VegetableListAdmin(admin.ModelAdmin):
-    list_display = ("name", "calorie", "kilojoule","category",)
+    list_display = ("name", "calorie", "kilojoule","category","photo")
 
 admin.site.register(Vegetable, VegetableListAdmin)

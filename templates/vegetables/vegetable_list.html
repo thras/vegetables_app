@@ -15,10 +15,15 @@
   >
     <img
       class="rounded-circle shadow"
-      alt="vegetable"
+      alt="{{vegetable.name}}"
       width="250"
       height="250"
-      src="{% static 'images/Cauliflower.jpg' %}"
+      
+      {% if vegetable.photo %}
+        src="{{ vegetable.photo.url }}"
+      {% else %}
+        src="{% static 'images/Cauliflower.jpg' %}"
+      {% endif %}
     />
     <div class="card-body">
       <h5 class="card-title">{{ vegetable.name }}</h5>

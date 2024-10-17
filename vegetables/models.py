@@ -1,6 +1,8 @@
 from django.db import models
 import uuid
 from django.urls import reverse
+from django.core.validators import FileExtensionValidator
+
 
 # Create your models here.
 class Vegetable(models.Model):
@@ -21,6 +23,7 @@ class Vegetable(models.Model):
     calorie = models.PositiveSmallIntegerField(blank=False)
     kilojoule = models.PositiveSmallIntegerField(blank=False)
     category = models.CharField(max_length=20, choices=CATEGORIES, default='None')
+    photo = models.ImageField(upload_to="photos/", null=True, blank=True, validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg'])]) 
     wiki = models.URLField(null=True)
 
     def __str__(self):
