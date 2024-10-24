@@ -1,5 +1,5 @@
 from .models import Vegetable
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.shortcuts import render
@@ -20,7 +20,7 @@ class VegetableDetailView(LoginRequiredMixin, DetailView):
     template_name = 'vegetables/vegetable_detail.html'
     login_url = "login"
 
-class SearchViewList(ListView):
+class SearchViewList(LoginRequiredMixin, ListView):
     model = Vegetable
     paginate_by = 8
     context_object_name = 'vegetable_list'

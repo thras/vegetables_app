@@ -52,3 +52,4 @@ class VegetableTests(TestCase):
         self.assertEqual(no_response.status_code, 404)
         self.assertContains(response, "Tomato")
         self.assertTemplateUsed(response, "vegetables/vegetable_detail.html")
+       
