@@ -1,0 +1,18 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block title %}Delete Vegetable{% endblock title %}
+
+{% block content %}
+<div class="row" style="display: flex; align-items: center; justify-content: center">
+    <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete "{{ object }}"?</p>
+        {{ form }}
+        <input type="submit" value="Confirm">
+    </form>
+</div>
+{% endblock content %}
+
+
+
+

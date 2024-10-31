@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, CreateView, DeleteView, U
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.shortcuts import render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 # Create your views here.
 
 class VegetableListView(LoginRequiredMixin, ListView):
@@ -37,10 +37,22 @@ class SearchViewList(LoginRequiredMixin, ListView):
             Q(name__icontains = query)|Q(category__icontains = query)
         )
 
-class AddVegetable(CreateView):
-  ''' View to add a new Vehicle.'''
+class AddVegetable(LoginRequiredMixin, CreateView):
   model = Vegetable
   fields = '__all__'
   context_object_name = 'add_vegetable'
   def get_success_url(self):
     return reverse('vegetable_list')
+  
+class VegetableUpdateView(UpdateView):
+  ''' View for update a Vehicle. '''
+  model = Vegetable
+  fields = '__all__'
+  context_object_name = 'edit_vegetable'
+  def get_success_url(self):
+    return reverse('vegetable_list')
+
+class VegetableDeleteView(DeleteView): 
+  ''' View for delete a Vehicle.'''
+  model = Vegetable
+  success_url = reverse_lazy("vegetable_list")

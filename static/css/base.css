@@ -16,3 +16,7 @@ img.bookcover {
     height: 300px;
     width: auto;
 }
+
+.main_div {
+    height: 85vh;
+}
