@@ -33,7 +33,9 @@
 
 <div class="row">
   <div class="row"style="justify-content: center">
-    <a href="{{request.META.HTTP_REFERER}}" style=" width: 100px;">Go Back.</a>
+    <!-- <a href="{{request.META.HTTP_REFERER}}" style=" width: 100px;">Go Back.</a> -->
+    <a href="{% url 'vegetable_list' %}" style=" width: 100px;">Go Back.</a>
+
   </div>
 </div>
 {% endblock content %}

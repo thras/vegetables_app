@@ -45,12 +45,12 @@ class AddVegetable(LoginRequiredMixin, CreateView):
     return reverse('vegetable_list')
   
 class VegetableUpdateView(UpdateView):
-  ''' View for update a Vehicle. '''
   model = Vegetable
   fields = '__all__'
   context_object_name = 'edit_vegetable'
   def get_success_url(self):
-    return reverse('vegetable_list')
+    pk = self.kwargs["pk"]
+    return reverse("vegetable_detail", kwargs={"pk": pk})
 
 class VegetableDeleteView(DeleteView): 
   ''' View for delete a Vehicle.'''
